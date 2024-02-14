@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #242527f3;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  border-radius: 8px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.644);
+  overflow: hidden;
+  width: 350px;
+}
+
+.title {
+  margin: 0;
+}
+.subtitle {
+  display: inline-block;
+  margin: 5px 0 20px;
+  opacity: 0.9;
+}
+
+.header {
+  background-color: #91308cef;
+  color: #fff;
+  padding: 30px 20px;
+}
+
+.header input {
+  background-color: rgba(0, 0, 0, 0.329);
+  border: 0;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 15px;
+  width: 100%;
+}
+.header input:focus {
+  outline: none;
+}
+
+.user-list {
+  background-color: #0e0d0d8f;
+  color: #b6afaf;
+  list-style-type: none;
+  margin: 0;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 0;
+}
+.user-list li {
+  display: flex;
+  padding: 20px;
+}
+
+.user-list img {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+}
+
+.user-list .user-info {
+  margin-left: 10px;
+}
+.user-list .user-info h4 {
+  margin: 0 0 10px;
+}
+.user-list .user-info p {
+  font-size: 12px;
+}
+.user-list li:not(:last-of-type) {
+  border-bottom: 1px solid #eeeeee34;
+}
+
+.user-list li.hide {
+  display: none;
+}
+@keyframes spinner {
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
+.spinner::before {
+  content: "";
+  animation: 2s linear infinite spinner;
+  animation-play-state: inherit;
+  border: solid 5px #cfd0d1;
+  border-bottom-color: #ac3ca6ef;
+  border-radius: 50%;
+  margin-left: auto;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  position: relative;
+  top: 20px;
+  left: 120px;
+  transform: translate3d(-50%, -50%, 0);
+  will-change: transform;
+}
